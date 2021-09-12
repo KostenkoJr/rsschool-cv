@@ -42,3 +42,25 @@ I am 22 years old. I am a second-year master's student at LETI. At the moment I 
 + **Master, Saint-Petersburg (2020-2022):**
     + St. Petersburg Electrotechnical University (LETI)
     + Department of Computer-aided Design Systems
+
+### Languages
+
++ **Russian** - native speaker
++ **English** - A2+ (EPAM English assesment August 2021)
++ **Ukrainian** - native speaker
+
+### Code examples
+
+```cs
+public static class EnumerableExtensions
+{
+    /// <summary>
+    /// Cartesian product of enumerated elements
+    /// </summary>
+    public static IEnumerable<IEnumerable<T>> CartesianProduct<T>(
+        this IEnumerable<IEnumerable<T>> source) =>
+        source.Aggregate(
+            (IEnumerable<IEnumerable<T>>)new[] { Enumerable.Empty<T>() },
+            (acc, src) => src.SelectMany(x => acc.Select(a => a.Concat(new[] { x }))));
+}
+```
